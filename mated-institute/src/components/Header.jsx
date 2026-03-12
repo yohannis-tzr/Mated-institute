@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,39 +31,40 @@ const Header = () => {
       <nav className="main-nav">
         <div className="container nav-container">
           <div className="logo">
-            <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/05/mated.png" alt="MATED Institute" />
+            <img src={logo} alt="MATED Institute" />
           </div>
 
           <div className={`nav-menu ${menuOpen ? 'active' : ''}`}>
             <ul>
-              <li><a href="#home" className="active">Home</a></li>
+              <li><Link to="/" className="active">Home</Link></li>
               <li className="has-dropdown">
-                <a href="#about">About Us <i className="fas fa-caret-down"></i></a>
+                <Link to="/about">About Us <i className="fas fa-caret-down"></i></Link>
                 <ul className="dropdown">
-                  <li><a href="#who-we-are">Who We Are?</a></li>
-                  <li><a href="#structure">Organizational Structure</a></li>
-                  <li><a href="#staff">Our Staff Profile</a></li>
+                  <li><Link to="/who-we-are">Who We Are?</Link></li>
+                  <li><Link to="/structure">Organizational Structure</Link></li>
+                  <li><Link to="/staff">Our Staff Profile</Link></li>
                 </ul>
               </li>
               <li className="has-dropdown">
-                <a href="#services">Our Services <i className="fas fa-caret-down"></i></a>
+                <Link to="/services">Our Services <i className="fas fa-caret-down"></i></Link>
                 <ul className="dropdown">
-                  <li><a href="#training">Training and Capacity Development</a></li>
-                  <li><a href="#consultancy">Consultancy Services</a></li>
+                  <li><Link to="/training">Training and Capacity Development</Link></li>
+                  <li><Link to="/consultancy">Consultancy Services</Link></li>
                 </ul>
               </li>
               <li className="has-dropdown">
-                <a href="#experience">Our Experience <i className="fas fa-caret-down"></i></a>
+                <Link to="/experience">Our Experience <i className="fas fa-caret-down"></i></Link>
                 <ul className="dropdown">
-                  <li><a href="#ifrs">IFRS for SMEs Consultancy</a></li>
-                  <li><a href="#ipsas">IPSAS Consultancy</a></li>
-                  <li><a href="#valuation">Asset Valuation</a></li>
+                  <li><Link to="/ifrs">IFRS for SMEs Consultancy</Link></li>
+                  <li><Link to="/ipsas">IPSAS Consultancy</Link></li>
+                  <li><Link to="/valuation">Asset Valuation</Link></li>
                 </ul>
               </li>
-              <li><a href="#departments">Our Departments</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#news">News & Blogs</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><Link to="/departments">Our Departments</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
+              <li><Link to="/news">News & Blogs</Link></li>
+              <li><Link to="/booking">Book Session</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </div>
 

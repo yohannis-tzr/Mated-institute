@@ -1,0 +1,51 @@
+.admin-panel {
+  padding: 60px 0;
+}
+.admin-panel .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin-panel th,
+.admin-panel td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+.admin-panel th {
+  background: #f4f4f4;
+}
+
+.admin-panel .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.admin-panel .login-form input {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.admin-panel .btn.logout {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.admin-panel .error-msg {
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.admin-panel .change-password {
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}

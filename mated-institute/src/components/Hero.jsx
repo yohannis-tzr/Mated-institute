@@ -1,17 +1,18 @@
 import React from 'react';
 import './Hero.css';
+import heroBg from '../assets/hero-bg.jpg';
 
 const Hero = () => {
   const slides = [
     {
-      bg: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/11/photo_2023-11-13_08-53-18.jpg',
+      bg: heroBg,
       title: 'Training and Capacity Development',
       subtitle: 'We provide training and capacity development for individual, small and medium sized businesses and government and non-Government organizations.',
       cta: 'Contact Us',
       link: '#contact'
     },
     {
-      bg: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/11/photo_2023-11-13_08-53-18.jpg',
+      bg: heroBg,
       title: 'Consultancy Service',
       subtitle: 'Industry-focused consulting for accounting, auditing, taxation, IT and more.',
       cta: 'Read More',
