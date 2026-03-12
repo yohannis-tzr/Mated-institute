@@ -1,42 +1,41 @@
-.services {
-  background: white;
+.departments {
+  background: #f9f9f9;
 }
 
-.services-grid {
+.departments-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 40px;
 }
 
-.service-card {
-  background: #f9f9f9;
+.department-card {
+  background: white;
   padding: 30px;
   border-radius: 8px;
   transition: all 0.3s;
-  border-bottom: 3px solid transparent;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.service-card:hover {
+.department-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  border-bottom-color: #ff6b35;
+  box-shadow: 0 10px 25px rgba(255,107,53,0.1);
 }
 
-.service-card h3 {
+.department-card h3 {
   color: #1e2a4a;
   margin: 0;
   font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  .services-grid {
+  .departments-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .services-grid {
+  .departments-grid {
     grid-template-columns: 1fr;
   }
 }

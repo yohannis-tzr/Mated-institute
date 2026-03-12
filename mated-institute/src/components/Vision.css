@@ -1,45 +1,44 @@
 .vision {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: #003366;
   color: white;
+  padding: 60px 0;
 }
 
-.vision-content {
+.vision-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 30px;
 }
 
 .vision-card {
   background: rgba(255,255,255,0.1);
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: left;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
-  text-align: left;
+  transition: transform 0.3s;
 }
 
-.vision-card h3 {
+.vision-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.15);
+}
+
+.vision-card h4 {
+  color: #ff6600;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.vision-card p {
   color: white;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-.vision-card p, .vision-card ul {
-  color: rgba(255,255,255,0.9);
+  margin: 0;
   line-height: 1.8;
 }
 
-.vision-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.vision-card li {
-  margin-bottom: 0.5rem;
-}
-
 @media (max-width: 768px) {
-  .vision-content {
+  .vision-grid {
     grid-template-columns: 1fr;
   }
 }

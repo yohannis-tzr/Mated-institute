@@ -4,47 +4,41 @@ import './Experiences.css';
 const Experiences = () => {
   const experiences = [
     {
-      title: "IFRS for SMEs Consultancy",
-      description: "Successfully implemented IFRS standards for over 50 SMEs across Ethiopia, ensuring compliance and financial transparency.",
-      year: "2015-2024"
+      title: "IFRS for SMEs consultancy Services",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
-      title: "IPSAS Implementation",
-      description: "Led IPSAS adoption projects for multiple government agencies, improving public sector financial reporting.",
-      year: "2018-2024"
+      title: "Training- IFRS, IPSAS, Asset Valuation & Others",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
-      title: "Asset Valuation Services",
-      description: "Completed comprehensive asset valuations for major corporations, financial institutions, and government entities.",
-      year: "2010-2024"
+      title: "IPSAS Consultancy Services",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
-      title: "Professional Training Programs",
-      description: "Trained over 5,000 professionals in IFRS, IPSAS, auditing, and financial management.",
-      year: "2010-2024"
+      title: "Consultancy Services Offered",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
-      title: "Taxation Advisory",
-      description: "Provided strategic tax planning and compliance services to diverse clients across industries.",
-      year: "2012-2024"
+      title: "Asset Valuation & Revaluation Consultancy Services",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
-      title: "Organizational Development",
-      description: "Helped organizations restructure and optimize operations for improved efficiency and growth.",
-      year: "2010-2024"
+      title: "More",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
     }
   ];
 
   return (
     <section id="experiences" className="experiences">
       <div className="container">
-        <h2>Our Experience</h2>
-        <p className="section-subtitle">10+ years of excellence in consulting and training</p>
-        <div className="experience-grid">
+        <h5>Experiences</h5>
+        <h2>Our Experiences</h2>
+        
+        <div className="experiences-grid">
           {experiences.map((exp, index) => (
-            <div key={index} className="experience-item">
-              <span className="experience-year">{exp.year}</span>
-              <h3>{exp.title}</h3>
+            <div key={index} className="experience-card">
+              <h4>{exp.title}</h4>
               <p>{exp.description}</p>
             </div>
           ))}

@@ -3,25 +3,22 @@ import './Vision.css';
 
 const Vision = () => {
   return (
-    <section className="vision">
+    <section id="vision" className="vision">
       <div className="container">
-        <div className="vision-content">
+        <div className="vision-grid">
           <div className="vision-card">
-            <h3>Our Vision</h3>
-            <p>To be the first choice advisor and consultant for all small and medium-sized businesses across Ethiopia by the year 2030.</p>
+            <h4>Delivering Professional Excellence</h4>
+            <p>To be a preferred Advisor or consultant to all small and medium sized businesses across Ethiopia by the year January 1, 2030 G.C.</p>
           </div>
+          
           <div className="vision-card">
-            <h3>Our Mission</h3>
-            <p>To commit our ethics, integrity and quality in profession and to back advice with performance, building public trust and enhancing value.</p>
+            <h4>Ethical & High-Quality Performers</h4>
+            <p>To commit our ethics, integrity and quality in profession and to back advice with performance</p>
           </div>
+          
           <div className="vision-card">
-            <h3>Our Values</h3>
-            <ul>
-              <li>✓ Integrity & Ethics</li>
-              <li>✓ Excellence in Service</li>
-              <li>✓ Client Partnership</li>
-              <li>✓ Continuous Innovation</li>
-            </ul>
+            <h4>Our Vision</h4>
+            <p>The first choice of the country's most popular talent... drawn by the company's reputation, culture, and diversity.</p>
           </div>
         </div>
       </div>
