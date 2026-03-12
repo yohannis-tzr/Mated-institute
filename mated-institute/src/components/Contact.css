@@ -11,7 +11,7 @@
 }
 
 .contact-info-section {
-  background: #1e2a4a;
+  background: #b71c1c;
   color: white;
   padding: 40px;
   border-radius: 8px;
@@ -46,7 +46,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #ff6b35;
+  border-color: #ff9800;
 }
 
 .contact-form button {

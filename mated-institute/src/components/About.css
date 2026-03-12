@@ -2,24 +2,153 @@
   background: #f9f9f9;
 }
 
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 30px;
+  align-items: start;
 }
 
-.about p {
+.service-badge {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.service-badge img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-badge h3 {
+  padding: 15px;
+  margin: 0;
+  color: #b71c1c;
   font-size: 1.1rem;
+}
+
+.about-center {
+  text-align: center;
+}
+
+.stats-box {
+  background: #ff6b35;
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.ceo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.ceo-section img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ceo-section h4 {
+  margin: 0;
+  color: #b71c1c;
+}
+
+.ceo-section p {
+  margin: 0;
+  color: #ff6b35;
+}
+
+.about-right {
+  text-align: left;
+}
+
+.about-right h5 {
+  color: #ff6b35;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.about-right h2 {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-right h2:after {
+  left: 0;
+  transform: none;
+}
+
+.about-right p {
   color: #666;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.deputy-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.deputy-section img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.deputy-section h4 {
+  margin: 0;
+  color: #b71c1c;
+}
+
+.deputy-section p {
+  margin: 0;
+  color: #ff6b35;
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #ff6b35;
+  border: 2px solid #ff9800;
   color: #ff6b35;
 }
 
 .btn-outline:hover {
   background: #ff6b35;
   color: white;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import About from './components/About.jsx';
-import Services from './components/Services.jsx';
-import News from './components/News.jsx';
-import Footer from './components/Footer.jsx';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Experiences from './components/Experiences';
+import Vision from './components/Vision';
+import Partners from './components/Partners';
+import Testimonials from './components/Testimonials';
+import Staff from './components/Staff';
+import News from './components/News';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +19,11 @@ function App() {
       <Hero />
       <About />
       <Services />
+      <Experiences />
+      <Vision />
+      <Partners />
+      <Testimonials />
+      <Staff />
       <News />
       <Footer />
     </div>

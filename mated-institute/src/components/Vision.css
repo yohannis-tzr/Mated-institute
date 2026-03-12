@@ -1,40 +1,61 @@
 .vision {
-  background: #003366;
+  background: #b71c1c;
   color: white;
-  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .vision-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  margin-bottom: 50px;
 }
 
-.vision-card {
+.vision-item {
   background: rgba(255,255,255,0.1);
   padding: 30px;
   border-radius: 8px;
   text-align: left;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
   transition: transform 0.3s;
 }
 
-.vision-card:hover {
+.vision-item:hover {
   transform: translateY(-10px);
-  background: rgba(255,255,255,0.15);
 }
 
-.vision-card h4 {
-  color: #ff6600;
+.vision-item i {
+  color: #ff9800;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.vision-item h3 {
+  color: white;
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
-.vision-card p {
-  color: white;
-  margin: 0;
+.vision-item p {
+  color: rgba(255,255,255,0.9);
   line-height: 1.8;
+  margin: 0;
+}
+
+.vision-image {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.vision-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 768px) {

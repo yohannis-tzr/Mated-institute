@@ -4,34 +4,40 @@ import './News.css';
 const News = () => {
   const news = [
     {
-      title: 'New Training Program Launch',
-      date: 'March 12, 2026',
-      excerpt: 'MATED Institute launches new professional development program...'
+      title: 'አዋጭ የገንዘብ ቁጠባና ብድር የህብረት ስራ ማህበር ዓለም አቀፍ የፋይናንስ ሪፖርት ደረጃዎች (IFRS) ከተለያዩ ክፍል ለተውጣጡ ሰራተኞቹ ስልጠና ሰጠ፡፡',
+      date: 'June 11, 2023',
+      image: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/photo_2023-06-08_16-42-22.jpg'
     },
     {
-      title: 'IFRS Workshop Success',
-      date: 'March 10, 2026',
-      excerpt: 'Successful completion of IFRS workshop with 50+ participants...'
+      title: 'አዋጭ የገንዘብ ቁጠባና ብድር የህብረት ስራ ማህበር ዓለም አቀፍ የፋይናንስ ሪፖርት ደረጃዎች (IFRS) ከተለያዩ ክፍል ለተውጣጡ ሰራተኞቹ ስልጠና ሰጠ፡፡',
+      date: 'June 11, 2023',
+      image: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/photo_2023-06-08_16-42-22.jpg'
     },
     {
-      title: 'Partnership Announcement',
-      date: 'March 8, 2026',
-      excerpt: 'Strategic partnership announced with international consulting firm...'
+      title: 'አዋጭ የገንዘብ ቁጠባና ብድር የህብረት ስራ ማህበር ዓለም አቀፍ የፋይናንስ ሪፖርት ደረጃዎች (IFRS) ከተለያዩ ክፍል ለተውጣጡ ሰራተኞቹ ስልጠና ሰጠ፡፡',
+      date: 'March 10, 2019',
+      image: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/photo_2023-06-08_16-42-22.jpg'
     }
   ];
 
   return (
     <section id="news" className="news">
       <div className="container">
-        <h2>News & Blogs</h2>
+        <h6>News & Blogs</h6>
+        <h2>Our Latest <span>News & Blogs</span></h2>
+
         <div className="news-grid">
           {news.map((item, index) => (
-            <div key={index} className="news-card">
-              <h3>{item.title}</h3>
-              <p className="news-date">{item.date}</p>
-              <p className="news-excerpt">{item.excerpt}</p>
-              <a href="#read" className="read-more">Read More →</a>
-            </div>
+            <article key={index} className="news-card">
+              <div className="news-image">
+                <img src={item.image} alt={item.title} />
+              </div>
+              <div className="news-content">
+                <span className="news-date">{item.date}</span>
+                <h3>{item.title}</h3>
+                <a href="#read" className="read-more">Read More »</a>
+              </div>
+            </article>
           ))}
         </div>
       </div>

@@ -3,51 +3,65 @@ import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <header className="header">
+      {/* Top Bar */}
       <div className="top-bar">
         <div className="container top-bar-container">
           <div className="contact-info">
-            <span>📞 +251-118-333536</span>
-            <span>✉️ info@matedinstitute.com</span>
-            <span>📍 P.O.Box:9885</span>
+            <span><i className="fas fa-phone"></i> +251-118-333536</span>
+            <span><i className="far fa-envelope"></i> info@matedinstitute.com</span>
+            <span><i className="icon icon-envelope"></i> P.O.Box: 9885</span>
           </div>
           <div className="top-bar-right">
             <a href="#eng" className="language">ENG</a>
-            <button className="search-toggle" onClick={() => setSearchOpen(!searchOpen)}>
-              🔍
-            </button>
+            <div className="social-icons">
+              <a href="https://facebook.com"><i className="icon icon-facebook"></i></a>
+              <a href="https://twitter.com"><i className="icon icon-twitter"></i></a>
+              <a href="https://linkedin.com"><i className="icon icon-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
 
-      {searchOpen && (
-        <div className="search-bar">
-          <div className="container">
-            <input type="text" placeholder="Search..." />
-            <button>Search</button>
-          </div>
-        </div>
-      )}
-
+      {/* Main Navigation */}
       <nav className="main-nav">
         <div className="container nav-container">
           <div className="logo">
-            <h1>MATED</h1>
+            <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/05/mated.png" alt="MATED Institute" />
           </div>
 
           <div className={`nav-menu ${menuOpen ? 'active' : ''}`}>
             <ul>
-              <li><a href="#home" onClick={() => setMenuOpen(false)}>HOME</a></li>
-              <li><a href="#about" onClick={() => setMenuOpen(false)}>ABOUT US</a></li>
-              <li><a href="#services" onClick={() => setMenuOpen(false)}>OUR SERVICES</a></li>
-              <li><a href="#experience" onClick={() => setMenuOpen(false)}>OUR EXPERIENCE</a></li>
-              <li><a href="#departments" onClick={() => setMenuOpen(false)}>OUR DEPARTMENTS</a></li>
-              <li><a href="#gallery" onClick={() => setMenuOpen(false)}>GALLERY</a></li>
-              <li><a href="#news" onClick={() => setMenuOpen(false)}>NEWS & BLOGS</a></li>
-              <li><a href="#contact" onClick={() => setMenuOpen(false)}>CONTACT US</a></li>
+              <li><a href="#home" className="active">Home</a></li>
+              <li className="has-dropdown">
+                <a href="#about">About Us <i className="fas fa-caret-down"></i></a>
+                <ul className="dropdown">
+                  <li><a href="#who-we-are">Who We Are?</a></li>
+                  <li><a href="#structure">Organizational Structure</a></li>
+                  <li><a href="#staff">Our Staff Profile</a></li>
+                </ul>
+              </li>
+              <li className="has-dropdown">
+                <a href="#services">Our Services <i className="fas fa-caret-down"></i></a>
+                <ul className="dropdown">
+                  <li><a href="#training">Training and Capacity Development</a></li>
+                  <li><a href="#consultancy">Consultancy Services</a></li>
+                </ul>
+              </li>
+              <li className="has-dropdown">
+                <a href="#experience">Our Experience <i className="fas fa-caret-down"></i></a>
+                <ul className="dropdown">
+                  <li><a href="#ifrs">IFRS for SMEs Consultancy</a></li>
+                  <li><a href="#ipsas">IPSAS Consultancy</a></li>
+                  <li><a href="#valuation">Asset Valuation</a></li>
+                </ul>
+              </li>
+              <li><a href="#departments">Our Departments</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#news">News & Blogs</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
