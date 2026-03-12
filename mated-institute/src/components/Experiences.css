@@ -1,0 +1,42 @@
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.experience-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  border-left: 4px solid #2a5298;
+  transition: transform 0.3s;
+}
+
+.experience-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.experience-year {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1e3c72;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.experience-item h3 {
+  color: #1e3c72;
+  margin-bottom: 1rem;
+}
+
+.experience-item p {
+  color: #666;
+  line-height: 1.6;
+}
