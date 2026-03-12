@@ -101,6 +101,18 @@ app.get('/api/bookings', authMiddleware, async (req, res) => {
   }
 });
 
+// allow deletion of individual booking
+app.delete('/api/bookings/:id', authMiddleware, async (req, res) => {
+  const { id } = req.params;
+  try {
+    await db.run('DELETE FROM bookings WHERE id = ?', id);
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete booking' });
+  }
+});
+
 app.post('/api/admin/login', async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -128,6 +140,23 @@ app.post('/api/admin/change-password', authMiddleware, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to change password' });
+  }
+});
+
+// create a new admin user
+app.post('/api/admin/add', authMiddleware, async (req, res) => {
+  const { username, password } = req.body;
+  if (!username || !password) return res.status(400).json({ error: 'Missing fields' });
+  try {
+    const hash = await bcrypt.hash(password, 10);
+    await db.run('INSERT INTO admins (username, password) VALUES (?, ?)', username, hash);
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err);
+    if (err.message.includes('UNIQUE')) {
+      return res.status(400).json({ error: 'Username already exists' });
+    }
+    res.status(500).json({ error: 'Failed to add admin' });
   }
 });
 

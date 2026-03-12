@@ -25,7 +25,7 @@ A simple Node/Express server handles form submissions for session bookings:
 2. Start the React frontend (`npm run dev`).
 3. In another terminal run `npm run server` to launch the API on port 4000.
 
-During development, Vite proxies `/api` requests to the server. Data is stored in `server/bookings.db` using SQLite.
+During development, Vite proxies `/api` requests to the server. Data is stored in `server/bookings.db` using SQLite (the project uses the `sqlite` and `sqlite3` packages).
 
 The backend now also maintains administrator users. A default account `admin`/`123456` is created on first run. Visit `/admin` to log in; you can change the password from the admin panel.
 

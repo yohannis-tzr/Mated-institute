@@ -16,6 +16,7 @@ import Gallery from './components/Gallery';
 import Departments from './components/Departments';
 import Booking from './components/Booking';
 import AdminPanel from './components/AdminPanel';
+import AddAdmin from './components/AddAdmin';
 import Footer from './components/Footer';
 
 // home page renders all primary sections
@@ -67,6 +68,7 @@ function App() {
         <Route path="/departments" element={<Departments />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/admin/add" element={<AddAdmin />} />
         {/* legacy anchor redirects */}
         <Route path="/who-we-are" element={<AnchorRedirect hash="#who-we-are" />} />
         <Route path="/structure" element={<AnchorRedirect hash="#structure" />} />

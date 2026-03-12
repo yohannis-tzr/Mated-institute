@@ -92,13 +92,18 @@ const Booking = () => {
                 <option value="female">Female</option>
                 <option value="other">Other</option>
               </select>
-              <input
+              <select
                 name="level"
                 value={form.level}
                 onChange={handleChange}
-                placeholder="Level of knowledge"
                 required
-              />
+              >
+                <option value="">Level of knowledge</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert</option>
+              </select>
             </>
           ) : (
             <>

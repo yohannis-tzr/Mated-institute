@@ -1,0 +1,22 @@
+/* reuse styles similar to login form */
+.add-admin-page {
+  padding: 60px 0;
+}
+.add-admin-page .container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.add-admin-page .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-admin-page .login-form input {
+  padding: 8px;
+  font-size: 1rem;
+}
+.add-admin-page .error-msg {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

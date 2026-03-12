@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AdminPanel.css';
 
 const AdminPanel = () => {
@@ -7,14 +8,20 @@ const AdminPanel = () => {
   const [loading, setLoading] = useState(false);
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
   const [loginError, setLoginError] = useState('');
-  const [changeForm, setChangeForm] = useState({ oldPassword: '', newPassword: '' });
-  const [changeMsg, setChangeMsg] = useState('');
+  const navigate = useNavigate();
+  // state for add-admin page removed; navigation will handle it
 
   useEffect(() => {
     if (token) {
       fetchBookings();
     }
   }, [token]);
+
+  const handleLogout = () => {
+    setToken(null);
+    localStorage.removeItem('adminToken');
+    navigate('/admin');
+  };
 
   const fetchBookings = () => {
     setLoading(true);
@@ -39,10 +46,28 @@ const AdminPanel = () => {
       });
   };
 
+  const handleDone = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this booking?')) return;
+    try {
+      const res = await fetch(`/api/bookings/${id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (res.ok) {
+        setBookings((bks) => bks.filter((b) => b.id !== id));
+      } else {
+        console.error('delete failed');
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginForm((f) => ({ ...f, [name]: value }));
   };
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -66,35 +91,7 @@ const AdminPanel = () => {
     }
   };
 
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setChangeForm((f) => ({ ...f, [name]: value }));
-  };
-
-  const handleChangePassword = async (e) => {
-    e.preventDefault();
-    setChangeMsg('');
-    try {
-      const res = await fetch('/api/admin/change-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(changeForm),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setChangeMsg('Password updated');
-        setChangeForm({ oldPassword: '', newPassword: '' });
-      } else {
-        setChangeMsg(data.error || 'Failed to update');
-      }
-    } catch (err) {
-      console.error(err);
-      setChangeMsg('Request error');
-    }
-  };
+  // no longer using change password functionality
 
   if (!token) {
     return (
@@ -133,75 +130,67 @@ const AdminPanel = () => {
         <h2>Admin - Bookings</h2>
         <button
           className="btn logout"
-          onClick={() => {
-            setToken(null);
-            localStorage.removeItem('adminToken');
-          }}
+          onClick={handleLogout}
         >
           Logout
         </button>
 
         {loading && <p>Loading...</p>}
         {!loading && (
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Type</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              {bookings.map((b) => (
-                <tr key={b.id}>
-                  <td>{b.id}</td>
-                  <td>{b.type}</td>
-                  <td>
-                    {b.type === 'private' ? (
-                      <div>
-                        <p>Name: {b.name}</p>
-                        <p>Age: {b.age}</p>
-                        <p>Sex: {b.sex}</p>
-                        <p>Level: {b.level}</p>
-                      </div>
-                    ) : (
-                      <div>
-                        <p>Company: {b.company}</p>
-                        <p>Employees: {b.employees}</p>
-                      </div>
-                    )}
-                  </td>
+          <>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Type</th>
+                  <th>Details</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {bookings.map((b) => (
+                  <tr key={b.id}>
+                    <td>{b.id}</td>
+                    <td>{b.type}</td>
+                    <td>
+                      {b.type === 'private' ? (
+                        <div>
+                          <p>Name: {b.name}</p>
+                          <p>Age: {b.age}</p>
+                          <p>Sex: {b.sex}</p>
+                          <p>Level: {b.level}</p>
+                        </div>
+                      ) : (
+                        <div>
+                          <p>Company: {b.company}</p>
+                          <p>Employees: {b.employees}</p>
+                        </div>
+                      )}
+                    </td>
+                    <td>
+                      <button
+                        className="btn delete"
+                        onClick={() => handleDone(b.id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button
+              className="btn add-admin"
+              onClick={() => navigate('/admin/add')}
+            >
+              Add Admin
+            </button>
+            <button className="btn logout bottom" onClick={handleLogout}>
+              Logout
+            </button>
+          </>
         )}
 
-        <section className="change-password">
-          <h3>Change password</h3>
-          <form onSubmit={handleChangePassword} className="login-form">
-            <input
-              name="oldPassword"
-              type="password"
-              placeholder="Current password"
-              value={changeForm.oldPassword}
-              onChange={handleChangeInput}
-              required
-            />
-            <input
-              name="newPassword"
-              type="password"
-              placeholder="New password"
-              value={changeForm.newPassword}
-              onChange={handleChangeInput}
-              required
-            />
-            <button type="submit" className="btn">
-              Update
-            </button>
-          </form>
-          {changeMsg && <p className="error-msg">{changeMsg}</p>}
-        </section>
       </div>
     </section>
   );
