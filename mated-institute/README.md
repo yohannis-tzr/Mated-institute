@@ -14,3 +14,18 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+---
+
+## Booking API (added)
+
+A simple Node/Express server handles form submissions for session bookings:
+
+1. Install dependencies with `npm install` (added express & sqlite3).
+2. Start the React frontend (`npm run dev`).
+3. In another terminal run `npm run server` to launch the API on port 4000.
+
+During development, Vite proxies `/api` requests to the server. Data is stored in `server/bookings.db` using SQLite (the project uses the `sqlite` and `sqlite3` packages).
+
+The backend now also maintains administrator users. A default account `admin`/`123456` is created on first run. Visit `/admin` to log in; you can change the password from the admin panel.
+

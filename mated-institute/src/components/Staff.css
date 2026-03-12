@@ -1,0 +1,84 @@
+.staff {
+  background: #b71c1c;
+  color: white;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.staff-left {
+  text-align: left;
+}
+
+.staff-left h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.staff-left h2:after {
+  left: 0;
+  transform: none;
+}
+
+.staff-left p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.staff-right {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.staff-right h6 {
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.staff-right h2 {
+  display: block;
+  color: #b71c1c;
+  margin-bottom: 30px;
+}
+
+.staff-right h2:after {
+  left: 0;
+  transform: none;
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.consultation-form input,
+.consultation-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.consultation-form input:focus,
+.consultation-form textarea:focus {
+  outline: none;
+  border-color: #ff9800;
+}
+
+.consultation-form button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+}
