@@ -83,7 +83,8 @@
 }
 
 .logo img {
-  height: 50px;
+  height: 60px;
+  width: auto;
 }
 
 .nav-menu ul {
@@ -161,6 +162,28 @@
   padding: 5px;
 }
 
+.mobile-nav-header {
+  display: none;
+  justify-content: flex-end;
+  padding: 0 20px 10px;
+}
+
+.mobile-back {
+  background: none;
+  border: 1px solid #333;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mobile-back:hover {
+  background: #333;
+  color: white;
+}
+
 .hamburger span {
   width: 25px;
   height: 2px;
@@ -186,6 +209,10 @@
   }
   
   .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav-header {
     display: flex;
   }
   

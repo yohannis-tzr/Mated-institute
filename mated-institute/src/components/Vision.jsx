@@ -26,7 +26,7 @@ const Vision = () => {
         </div>
 
         <div className="vision-image">
-          <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/06/photo_2023-06-10_15-07-17.jpg" alt="Team" />
+          <img src="../photos/vision/team-photo.jpg" alt="Team" />
         </div>
       </div>
     </section>

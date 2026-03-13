@@ -1,0 +1,8 @@
+.staff-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.staff-page .staff-profile {
+  padding-top: 0;
+}

@@ -19,7 +19,7 @@ const Header = () => {
           <div className="top-bar-right">
             <a href="#eng" className="language">ENG</a>
             <div className="social-icons">
-              <a href="https://facebook.com"><i className="icon icon-facebook"></i></a>
+              <a href="https://web.facebook.com/people/Mated-Mated/100018235770342/" target="_blank" rel="noopener noreferrer"><i className="icon icon-facebook"></i></a>
               <a href="https://twitter.com"><i className="icon icon-twitter"></i></a>
               <a href="https://linkedin.com"><i className="icon icon-linkedin"></i></a>
             </div>
@@ -31,10 +31,17 @@ const Header = () => {
       <nav className="main-nav">
         <div className="container nav-container">
           <div className="logo">
-            <img src={logo} alt="MATED Institute" />
+            <Link to="/">
+              <img src={logo} alt="MATED Institute" />
+            </Link>
           </div>
 
           <div className={`nav-menu ${menuOpen ? 'active' : ''}`}>
+            <div className="mobile-nav-header">
+              <button className="mobile-back" onClick={() => setMenuOpen(false)}>
+                ← Back
+              </button>
+            </div>
             <ul>
               <li><Link to="/" className="active">Home</Link></li>
               <li className="has-dropdown">

@@ -9,6 +9,8 @@ import Vision from './components/Vision';
 import Partners from './components/Partners';
 import Testimonials from './components/Testimonials';
 import Staff from './components/Staff';
+import StaffProfile from './components/StaffProfile';
+import StaffPage from './components/StaffPage';
 import News from './components/News';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -61,7 +63,7 @@ function App() {
         <Route path="/vision" element={<Vision />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/staff" element={<Staff />} />
+        <Route path="/staff" element={<StaffPage />} />
         <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
