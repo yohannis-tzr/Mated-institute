@@ -6,37 +6,37 @@ const Experiences = () => {
     {
       icon: 'icon-chart2',
       title: 'IFRS for SMEs consultancy Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      desc: 'Specialized International Financial Reporting Standards implementation for small and medium enterprises. Our experts guide you through seamless transition to IFRS compliance, ensuring accurate financial reporting and enhanced stakeholder confidence.',
       link: '/ifrs-for-smes-consultancy-services/'
     },
     {
       icon: 'icon-Computer',
       title: 'Training- IFRS, IPSAS, Asset Valuation & Others',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      desc: 'Comprehensive professional training programs designed to build expertise in financial reporting standards. Our hands-on workshops and certification courses empower finance professionals with practical skills and industry knowledge.',
       link: '/training-ifrs-ipsas-asset-valuation-others/'
     },
     {
       icon: 'icon-line-chart1',
       title: 'IPSAS Consultancy Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      desc: 'Expert International Public Sector Accounting Standards implementation for government entities and public sector organizations. We ensure compliance, improve transparency, and enhance public financial management through our specialized consultancy services.',
       link: '/ipsas-consultancy-services/'
     },
     {
       icon: 'icon-pie-chart3',
       title: 'Consultancy Services Offered',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      desc: 'Strategic business advisory services covering financial management, operational efficiency, and organizational development. Our tailored solutions address unique challenges and drive sustainable growth for your organization.',
       link: '/consultancy-services-offered/'
     },
     {
       icon: 'icon-like1',
       title: 'Asset Valuation & Revaluation Consultancy Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      desc: 'Professional asset valuation services providing accurate assessment of tangible and intangible assets. Our certified experts deliver reliable valuations for financial reporting, mergers & acquisitions, and strategic decision-making.',
       link: '/asset-valuation-revaluation-consultancy-services/'
     },
     {
       icon: 'icon-monitor1',
       title: 'More',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      desc: 'Discover our full range of specialized consulting and training services. From risk management to internal audit, we offer comprehensive solutions to meet all your professional development and organizational needs.',
       link: '#'
     }
   ];

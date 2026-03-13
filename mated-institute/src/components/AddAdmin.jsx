@@ -17,7 +17,7 @@ const AddAdmin = () => {
     e.preventDefault();
     setMsg('');
     try {
-      const res = await fetch('/api/admin/add', {
+      const res = await fetch('http://localhost:4002/api/admin/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

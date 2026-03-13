@@ -25,7 +25,7 @@ const AdminPanel = () => {
 
   const fetchBookings = () => {
     setLoading(true);
-    fetch('/api/bookings', {
+    fetch('http://localhost:4002/api/bookings', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -49,7 +49,7 @@ const AdminPanel = () => {
   const handleDone = async (id) => {
     if (!window.confirm('Are you sure you want to delete this booking?')) return;
     try {
-      const res = await fetch(`/api/bookings/${id}`, {
+      const res = await fetch(`http://localhost:4002/api/bookings/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -73,7 +73,7 @@ const AdminPanel = () => {
     e.preventDefault();
     setLoginError('');
     try {
-      const res = await fetch('/api/admin/login', {
+      const res = await fetch('http://localhost:4002/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(loginForm),
@@ -159,11 +159,29 @@ const AdminPanel = () => {
                           <p>Age: {b.age}</p>
                           <p>Sex: {b.sex}</p>
                           <p>Level: {b.level}</p>
+                          {b.phone && <p>Phone: {b.phone}</p>}
+                          {b.email && <p>Email: {b.email}</p>}
                         </div>
-                      ) : (
+                      ) : b.type === 'company' ? (
                         <div>
                           <p>Company: {b.company}</p>
                           <p>Employees: {b.employees}</p>
+                          {b.phone && <p>Phone: {b.phone}</p>}
+                          {b.email && <p>Email: {b.email}</p>}
+                        </div>
+                      ) : b.type === 'consultation' ? (
+                        <div>
+                          <p>Name: {b.name}</p>
+                          {b.phone && <p>Phone: {b.phone}</p>}
+                          {b.email && <p>Email: {b.email}</p>}
+                          {b.subject && <p>Subject: {b.subject}</p>}
+                          {b.message && <p>Message: {b.message}</p>}
+                        </div>
+                      ) : (
+                        <div>
+                          <p>Name: {b.name}</p>
+                          {b.phone && <p>Phone: {b.phone}</p>}
+                          {b.email && <p>Email: {b.email}</p>}
                         </div>
                       )}
                     </td>

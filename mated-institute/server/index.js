@@ -15,6 +15,18 @@ const JWT_SECRET = process.env.JWT_SECRET || 'change_this_secret';
 
 app.use(express.json());
 
+// Enable CORS for all routes
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 // helper middleware for auth
 function authMiddleware(req, res, next) {
   const auth = req.headers.authorization;
@@ -44,12 +56,36 @@ async function initDb() {
       type TEXT NOT NULL,
       name TEXT,
       age INTEGER,
+      phone TEXT,
+      email TEXT,
       sex TEXT,
       level TEXT,
       company TEXT,
       employees INTEGER
     )
   `);
+
+  // Add phone and email columns if they don't exist (for existing databases)
+  try {
+    await db.run('ALTER TABLE bookings ADD COLUMN phone TEXT');
+  } catch (e) {
+    // Column already exists, ignore error
+  }
+  try {
+    await db.run('ALTER TABLE bookings ADD COLUMN email TEXT');
+  } catch (e) {
+    // Column already exists, ignore error
+  }
+  try {
+    await db.run('ALTER TABLE bookings ADD COLUMN subject TEXT');
+  } catch (e) {
+    // Column already exists, ignore error
+  }
+  try {
+    await db.run('ALTER TABLE bookings ADD COLUMN message TEXT');
+  } catch (e) {
+    // Column already exists, ignore error
+  }
 
   await db.exec(`
     CREATE TABLE IF NOT EXISTS admins (
@@ -70,18 +106,22 @@ async function initDb() {
 
 // routes
 app.post('/api/bookings', async (req, res) => {
-  const { type, name, age, sex, level, company, employees } = req.body;
+  const { type, name, age, phone, email, sex, level, company, employees, subject, message } = req.body;
   try {
     const result = await db.run(
-      `INSERT INTO bookings (type, name, age, sex, level, company, employees)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO bookings (type, name, age, phone, email, sex, level, company, employees, subject, message)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       type,
       name || null,
       age || null,
+      phone || null,
+      email || null,
       sex || null,
       level || null,
       company || null,
-      employees || null
+      employees || null,
+      subject || null,
+      message || null
     );
     res.json({ id: result.lastID });
   } catch (err) {

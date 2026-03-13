@@ -9,7 +9,9 @@ const Booking = () => {
     sex: '',
     level: '',
     company: '',
-    employees: ''
+    employees: '',
+    phone: '',
+    email: ''
   });
   const [status, setStatus] = useState('');
 
@@ -20,9 +22,9 @@ const Booking = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = { type, ...form };
+    const payload = { type, ...form, phone: form.phone, email: form.email };
     try {
-      const res = await fetch('/api/bookings', {
+      const res = await fetch('http://localhost:4002/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -30,7 +32,7 @@ const Booking = () => {
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setStatus('success');
-        setForm({ name: '', age: '', sex: '', level: '', company: '', employees: '' });
+        setForm({ name: '', age: '', sex: '', level: '', company: '', employees: '', phone: '', email: '' });
       } else {
         console.error('booking error', data);
         setStatus(data.error || 'error');
@@ -124,6 +126,23 @@ const Booking = () => {
               />
             </>
           )}
+
+          <input
+            name="phone"
+            type="tel"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Phone Number"
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            required
+          />
 
           <button type="submit" className="btn">
             Submit
