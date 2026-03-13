@@ -169,9 +169,15 @@ const StaffProfile = () => {
             <div className="avatars">
               {staffProfiles.map((member) => (
                 <div key={member.id} className="avatar" onClick={() => handleStaffClick(member)}>
-                  <img src={member.photo} alt={member.name} className="avatar-img" />
+                  <div className="avatar-header">
+                    <i className="fas fa-user-tie avatar-icon"></i>
+                    <img src={member.photo} alt={member.name} className="avatar-img" />
+                  </div>
                   <div className="avatar-name">{member.name}</div>
-                  <div className="avatar-role">{member.role}</div>
+                  <div className="avatar-role">
+                    <i className="fas fa-briefcase role-icon"></i>
+                    {member.role}
+                  </div>
                 </div>
               ))}
             </div>
