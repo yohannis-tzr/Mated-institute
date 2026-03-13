@@ -6,17 +6,17 @@ const News = () => {
     {
       title: 'አዋጭ የገንዘብ ቁጠባና ብድር የህብረት ስራ ማህበር ዓለም አቀፍ የፋይናንስ ሪፖርት ደረጃዎች (IFRS) ከተለያዩ ክፍል ለተውጣጡ ሰራተኞቹ ስልጠና ሰጠ፡፡',
       date: 'June 11, 2023',
-      image: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/photo_2023-06-08_16-42-22.jpg'
+      image: '../photos/news/news-image.jpg'
     },
     {
       title: 'አዋጭ የገንዘብ ቁጠባና ብድር የህብረት ስራ ማህበር ዓለም አቀፍ የፋይናንስ ሪፖርት ደረጃዎች (IFRS) ከተለያዩ ክፍል ለተውጣጡ ሰራተኞቹ ስልጠና ሰጠ፡፡',
       date: 'June 11, 2023',
-      image: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/photo_2023-06-08_16-42-22.jpg'
+      image: '../photos/news/news-image.jpg'
     },
     {
       title: 'አዋጭ የገንዘብ ቁጠባና ብድር የህብረት ስራ ማህበር ዓለም አቀፍ የፋይናንስ ሪፖርት ደረጃዎች (IFRS) ከተለያዩ ክፍል ለተውጣጡ ሰራተኞቹ ስልጠና ሰጠ፡፡',
       date: 'March 10, 2019',
-      image: 'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/photo_2023-06-08_16-42-22.jpg'
+      image: '../photos/news/news-image.jpg'
     }
   ];
 

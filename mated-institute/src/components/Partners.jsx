@@ -3,14 +3,14 @@ import './Partners.css';
 
 const Partners = () => {
   const partners = [
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/Addis-ababa-chambers.jpg',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/Untitled-1.jpg',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/05/Ethiopian-paper-and-pulp__4_-removebg-preview.png',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/Tirett.jpg',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/Ethiopian-family.jpg',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/Ethiopian-airports.jpg',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/Elili-hotel.jpg',
-    'https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/11/cropped-Chamber-Logoweb-1.png'
+    '../photos/partners/addis-ababa-chambers.jpg',
+    '../photos/partners/untitled-1.jpg',
+    '../photos/partners/ethiopian-paper-pulp.png',
+    '../photos/partners/tirett.jpg',
+    '../photos/partners/ethiopian-family.jpg',
+    '../photos/partners/ethiopian-airports.jpg',
+    '../photos/partners/elili-hotel.jpg',
+    '../photos/partners/chamber-logo.png'
   ];
 
   // Duplicate the partners array for seamless infinite loop

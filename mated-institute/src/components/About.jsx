@@ -8,11 +8,11 @@ const About = () => {
         <div className="about-grid">
           <div className="about-left">
             <div className="service-badge">
-              <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/06/photo_2023-06-09_00-04-43.jpg" alt="Consultancy" />
+              <img src="../photos/about/consultancy-service.jpg" alt="Consultancy" />
               <h3>Consultancy Service</h3>
             </div>
             <div className="service-badge">
-              <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/06/photo_2023-06-10_15-07-55.jpg" alt="Training" />
+              <img src="../photos/about/training-service.jpg" alt="Training" />
               <h3>Training & Capacity Development</h3>
             </div>
           </div>
@@ -25,7 +25,7 @@ const About = () => {
               </div>
             </div>
             <div className="ceo-section">
-              <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2019/03/MATED-consultancy-Tewodros-1.jpg" alt="Tewodros Endale" />
+              <img src="../photos/about/ceo-tewodros.jpg" alt="Tewodros Endale" />
               <div>
                 <h4>Tewodros Endale</h4>
                 <p>CEO</p>
@@ -41,7 +41,7 @@ const About = () => {
             <p>Each of our consultants has a long experience as a consultant. Honesty, commitment, dedication and integrity combined with the highest professional and personal standards form the cornerstone of all activities of the firm.</p>
             
             <div className="deputy-section">
-              <img src="https://i0.wp.com/matedinstitute.com/wp-content/uploads/2023/11/Wogayehu.jpg" alt="Wogayehu W/yesus" />
+              <img src="../photos/about/deputy-wogayehu.jpg" alt="Wogayehu W/yesus" />
               <div>
                 <h4>Wogayehu W/yesus</h4>
                 <p>Deputy CEO</p>
